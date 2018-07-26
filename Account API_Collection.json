@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "4992fe5b-4570-4ca2-a211-2f666aff2c8a",
+		"name": "July-2018",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Staging",
+			"description": "",
+			"item": [
+				{
+					"name": "GET",
+					"description": "",
+					"item": [
+						{
+							"name": "getAccountServiceDetails-UsingAuthID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "316ef82e-aa4f-453f-8e78-14a137ba22dc",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response time is less than 6000ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(6000);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Body matches string - features_callstats_enabled\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"features_callstats_enabled\");",
+											"});",
+											"",
+											"pm.test(\"Body matches string - features_callstats_key\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"features_callstats_key\");",
+											"});",
+											"",
+											"pm.test(\"Status code name has string\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "efcc4354-0807-488b-8add-95574e4248db",
+										"type": "text/javascript",
+										"exec": [
+											"pm.globals.set(\"baseURL\", \"https://account-service.test.plivo.com/accountservice/v1/internal/account\");",
+											"",
+											"pm.globals.get(\"baseURL\");"
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/account/MAZTE2ZDQ4YZM1MZM4ND/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"account",
+										"MAZTE2ZDQ4YZM1MZM4ND",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/account/MAMDHKMJQ5MGE0NDBMNJ/"
+							},
+							"response": []
+						},
+						{
+							"name": "getAccountServiceDetails-UsingAccountID",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/accountid/28029/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"accountid",
+										"28029",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/accountid/28029/"
+							},
+							"response": [
+								{
+									"id": "f29ec216-3e34-484b-ae96-6fa326bdd4ea",
+									"name": "17th July - Staging ",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {},
+										"url": {
+											"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/accountid/28029/",
+											"protocol": "https",
+											"host": [
+												"account-service",
+												"test",
+												"plivo",
+												"com"
+											],
+											"path": [
+												"accountservice",
+												"v1",
+												"internal",
+												"accountid",
+												"28029",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip",
+											"name": "Content-Encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "Content-Length",
+											"value": "467",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 17 Jul 2018 09:08:56 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										}
+									],
+									"cookie": [],
+									"body": "{\"data\":{\"account\":{\"account_type\":\"developer\",\"address\":\"July13\",\"auth_id\":\"MAMDLLMWUYZGIZNZLLMD\",\"auth_token\":\"ZDQzMmIzZDk2OTZkYjQ2OGRkM2MzZDBlMDYwNGQ2\",\"bulk_call_enabled\":false,\"carrier_type\":\"plivo_carrier\",\"city\":\"July13-1\",\"cps_allowed\":2,\"customer_type\":\"regular\",\"enabled\":true,\"fax_allowed\":false,\"features\":\"{\\\"callstats\\\":false,\\\"callstats_enabled\\\":false,\\\"callstats_enabled_feature\\\":false,\\\"features\\\":false,\\\"features_callstats_enabled\\\":true,\\\"features_callstats_key\\\":false}\",\"features_callstats_enabled\":\"0\",\"features_callstats_key\":\"f2b6d30b-9273-41a1-bfd0-285c67c2ca11\",\"id\":28029,\"mps_allowed\":5,\"name\":\"July13\",\"plan_id\":1,\"plivo_carrier_fallback\":false,\"postpaid\":false,\"sender_id_whitelisted\":false,\"sms_carrier_profile_group_id\":1,\"sms_cost_check\":false,\"sms_routing_strategy\":\"manual\",\"state\":\"stage444\",\"timezone\":\"Asia/Kolkata\",\"user_id\":28112}},\"status\":\"success\"}"
+								}
+							]
+						},
+						{
+							"name": "getAccountServiceDetails-UsingAuthID and AUTHToken",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/authenticate/?auth_id=MAMDLLMWUYZGIZNZLLMD&auth_token=ZDQzMmIzZDk2OTZkYjQ2OGRkM2MzZDBlMDYwNGQ2",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"authenticate",
+										""
+									],
+									"query": [
+										{
+											"key": "auth_id",
+											"value": "MAMDLLMWUYZGIZNZLLMD"
+										},
+										{
+											"key": "auth_token",
+											"value": "ZDQzMmIzZDk2OTZkYjQ2OGRkM2MzZDBlMDYwNGQ2"
+										}
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/authenticate/?auth_id=MAMDLLMWUYZGIZNZLLMD&auth_token=ZDQzMmIzZDk2OTZkYjQ2OGRkM2MzZDBlMDYwNGQ2'"
+							},
+							"response": []
+						},
+						{
+							"name": "getAccountServiceDetails-UsingAuthID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4d021544-3579-4f5e-b5ed-e7c36a9dadc5",
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Response time is less than 6000ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(6000);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Body matches string - features_callstats_enabled\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"features_callstats_enabled\");",
+											"});",
+											"",
+											"pm.test(\"Body matches string - features_callstats_key\", function () {",
+											"    pm.expect(pm.response.text()).to.include(\"features_callstats_key\");",
+											"});",
+											"",
+											"pm.test(\"Status code name has string\", function () {",
+											"    pm.response.to.have.status(\"OK\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"tests[\"Status code is 200\"] = responseCode.code === 200;"
+										]
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d32a2ceb-48b3-4f84-acf4-e645e46b1be5",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/account/SAZJFIZJJIZDK5YTCXYM/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"account",
+										"SAZJFIZJJIZDK5YTCXYM",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/account/MAMDHKMJQ5MGE0NDBMNJ/"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST",
+					"description": "",
+					"item": [
+						{
+							"name": "enableCallStats-Generic",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"callstats\":true\n}"
+								},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/features/SAZJFIZJJIZDK5YTCXYM/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"features",
+										"SAZJFIZJJIZDK5YTCXYM",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/features/MAMDLLMWUYZGIZNZLLMD/\n\n\nNote: To enable or disable callstats for main account or sub account, You just need to specify the specific AUTH-ID\n\nIf you want to enable callstats for main account, Then incldue paramenet \"callstats\":true in the body and then AUTH-ID of main account, Similarly the same way for SUB Account. "
+							},
+							"response": []
+						},
+						{
+							"name": "disableCallStats-Generic",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"callstats\":false\n}"
+								},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/features/MAMDLLMWUYZGIZNZLLMD/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"features",
+										"MAMDLLMWUYZGIZNZLLMD",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/features/MAMDLLMWUYZGIZNZLLMD/\n\n\nNote: To enable or disable callstats for main account or sub account, You just need to specify the specific AUTH-ID\n\nIf you want to enable callstats for main account, Then incldue paramenet \"callstats\":true in the body and then AUTH-ID of main account, Similarly the same way for SUB Account. "
+							},
+							"response": []
+						},
+						{
+							"name": "enableCallstatsforAccount-MainAccount",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "pass",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"callstats\":true\n}"
+								},
+								"url": {
+									"raw": "https://account-service.test.plivo.com/accountservice/v1/internal/features/MAMDLLMWUYZGIZNZLLMD/",
+									"protocol": "https",
+									"host": [
+										"account-service",
+										"test",
+										"plivo",
+										"com"
+									],
+									"path": [
+										"accountservice",
+										"v1",
+										"internal",
+										"features",
+										"MAMDLLMWUYZGIZNZLLMD",
+										""
+									]
+								},
+								"description": "https://account-service.test.plivo.com/accountservice/v1/internal/features/MAMDLLMWUYZGIZNZLLMD/"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "DELETE",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1ffa9692-17bc-4b75-9260-0b629c022d24",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c636bd01-50b4-4363-ba8f-64a1ff1c3124",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
