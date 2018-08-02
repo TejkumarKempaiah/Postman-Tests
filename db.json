@@ -1,19 +1,14 @@
 {
-  "names": 
-  [
-    { "id": 1, "name":"Tejkumar","Qualification":"Software Engineer"},
-    { "id": 1, "name":"Jeevitha","Qualification":"Govt Teacher"},
-    { "id": 1, "name":"Shravya","Qualification":"Primary Student"}
+  "posts": [
+    { "id": 1, "title": "Post 1" },
+    { "id": 2, "title": "Post 2" },
+    { "id": 3, "title": "Post 3" }
   ],
-  
-  "city": 
-  [
-    { "id": 1, "cname": "Bengaluru", "postId": 560056 },
-    { "id": 2, "cname": "Mangaluru", "postId": 575007 }
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "some comment", "postId": 1 }
   ],
-  
-  "state": 
-  {
-    "sname": 1, "kartanaka"
+  "profile": {
+    "name": "typicode"
   }
 }
