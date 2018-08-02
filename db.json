@@ -4,13 +4,20 @@
   [
   
     {
-    "name":"Tejkumar"
+    "name":"Tejkumar","Jeevitha","Sharvya","Kempaiah","Sowbhagya V L", "Thilak"
     }
 
   ],
    
   "contactInfo":
-  {
-    "mobile":"8553314778"
-  }
+  [
+    
+    {
+      "mobile":"8553314778",
+      "home":"0824223300",
+      "email-id":tejguddigerekempaiah@gmail.com",
+      "address":"Bangalore"
+    }
+    
+  ]
 }
