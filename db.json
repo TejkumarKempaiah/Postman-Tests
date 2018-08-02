@@ -1,5 +1,16 @@
-[
+{
+  
+ "userNames":
+  [
+  
+    {
+    "name":"Tejkumar"
+    }
+
+  ],
+   
+  "contactInfo":
   {
-  "name":"Tejkumar"
+    "mobile":+91-8553314778"
   }
-]
+}
