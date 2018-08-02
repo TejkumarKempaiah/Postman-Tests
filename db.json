@@ -13,9 +13,7 @@
   ],
   
   "state": 
-  [
-    {"sname": 1, "kartanaka"},
-    {"sname": 2, "kerala"},
-    {"sname":3, "andra pradesh"},
-  ]
+  {
+    "sname": 1, "kartanaka"
+  }
 }
