@@ -1,2 +1,2 @@
 # Postman-Tests
-This repo consists of all collections(in .son format) for CI purpose.
+This repo consists of all collections(in .json format) for CI purpose.
