@@ -20,7 +20,7 @@ Example:
 
 HTTP Method: GET
 
-Auth Type: No Auth Type
+Auth Type: No Auth
 
 API ENDPOINT: https://my-json-server.typicode.com/TejkumarKempaiah/Postman-Tests/comments/
 
